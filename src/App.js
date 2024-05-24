@@ -9,6 +9,8 @@ import Settings from './components/Settings/Settings'
 import Music from './components/Music/Music'
 
 function App(props) {
+  console.log('App', props)
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -19,7 +21,7 @@ function App(props) {
             path="/profile"
             render={() => (
               <Profile
-                posts={props.state.profilePage.posts}
+                posts={props?.state?.profilePage?.posts}
                 dispatch={props.dispatch}
               />
             )}
@@ -29,8 +31,9 @@ function App(props) {
             path="/dialogs"
             render={() => (
               <Dialogs
-                dialogs={props.state.dialogsPage}
-                messages={props.state.dialogsPage}
+                // dialogs={props.state.dialogsPage}
+                // messages={props.state.dialogsPage}
+                state={props.state.dialogsPage}
               />
             )}
           />

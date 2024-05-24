@@ -3,24 +3,20 @@ import classes from './MyPosts.module.css'
 import Post from './Post/Post'
 
 const MyPosts = (props) => {
-  console.log('проверка', props)
+  console.log('проверка myposts', props)
   let postsElements = props.posts.map((p, index, array) => (
     <Post key={p.id} message={p.message} likeCount={p.likeCount} />
   ))
   let newPostElement = React.createRef()
 
   let addPost = () => {
-    if (newPostElement.current.value) {
-      props.dispatch({ type: 'ADD-POST' })
-      newPostElement.current.value = ''
-    }
+    props.dispatch({ type: 'ADD-POST' })
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value
 
-    let action = { type: 'UPDATE-NEW-POST-TEXT', newText: text }
-    props.dispatch(action)
+    props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
   }
 
   return (
