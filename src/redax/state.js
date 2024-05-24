@@ -55,7 +55,7 @@ let store = {
       }
       this._state.profilePage.posts.push(newPost)
       this._state.profilePage.newPostText = ''
-      this._callSubscriber()
+      this._callSubscriber(this._state)
     } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
       this._state.profilePage.newPostText = action.newText
       this._callSubscriber(this._state)
