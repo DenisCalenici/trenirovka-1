@@ -20,10 +20,11 @@ function App(props) {
             render={() => (
               <Profile
                 posts={props.state.profilePage.posts}
-                addPost={props.addPost}
+                dispatch={props.dispatch}
               />
             )}
           />
+
           <Route
             path="/dialogs"
             render={() => (
