@@ -4,6 +4,7 @@ import Header from './components/Header/Header'
 import Dialogs from './components/Dialogs/Dialogs'
 import Navbar from './components/Navbar/Navbar'
 import Profile from './components/Profaile/Profaile'
+import store from './index'
 import News from './components/News/News'
 import Settings from './components/Settings/Settings'
 import Music from './components/Music/Music'
@@ -21,7 +22,7 @@ function App(props) {
             path="/profile"
             render={() => (
               <Profile
-                posts={props?.state?.profilePage?.posts}
+                posts={props.state.profilePage.posts}
                 dispatch={props.dispatch}
               />
             )}
@@ -34,6 +35,7 @@ function App(props) {
                 // dialogs={props.state.dialogsPage}
                 // messages={props.state.dialogsPage}
                 state={props.state.dialogsPage}
+                store={props.store}
               />
             )}
           />
