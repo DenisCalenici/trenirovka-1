@@ -1,6 +1,8 @@
 import React from 'react'
 import classes from './MyPosts.module.css'
 import Post from './Post/Post'
+import { addPostActiveCreator, updateNewPostTextActionCreator } from '../../../redax/Profail-reducer'
+
 
 const MyPosts = (props) => {
   console.log('проверка myposts', props)

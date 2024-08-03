@@ -1,8 +1,8 @@
 import classes from './Dialogs.module.css'
 import Message from './Message/Message'
 import DialogItem from './DialogItem/DialogItem'
-import { updateNewMessageBodyCreator } from '../../redax/state'
-import { sendMessageCreator } from '../../redax/state'
+import { updateNewMessageBodyCreator } from '../../redax/Dialogs-reducer '
+import { sendMessageCreator } from '../../redax/Dialogs-reducer '
 
 const Dialogs = (props) => {
   console.log('proverka', props)
