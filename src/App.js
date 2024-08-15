@@ -10,7 +10,7 @@ import Settings from './components/Settings/Settings'
 import Music from './components/Music/Music'
 
 function App(props) {
-  console.log('App', props)
+  console.log('proverka app', props)
 
   return (
     <BrowserRouter>

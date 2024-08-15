@@ -5,7 +5,7 @@ import { updateNewMessageBodyCreator } from '../../redax/Dialogs-reducer '
 import { sendMessageCreator } from '../../redax/Dialogs-reducer '
 
 const Dialogs = (props) => {
-  console.log('proverka', props)
+  console.log('proverka dialogs', props)
   let dialogsElement = props.state.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} />
   ))

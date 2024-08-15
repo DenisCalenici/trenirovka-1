@@ -1,6 +1,5 @@
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY'
-const SEND_MESSAGE = 'SEND-MESSAGE'
-const sideBarReducer = (state, action) => {
+let initialState = {}
+const sideBarReducer = (state = initialState, action) => {
   return state
 }
 export default sideBarReducer
