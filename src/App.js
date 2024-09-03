@@ -8,6 +8,7 @@ import store from './index'
 import News from './components/News/News'
 import Settings from './components/Settings/Settings'
 import Music from './components/Music/Music'
+import DialogsContainer from './components/Dialogs/DialogsContainer'
 
 function App(props) {
   console.log('proverka app', props)
@@ -20,24 +21,12 @@ function App(props) {
         <div className="app-wrapper-content">
           <Route
             path="/profile"
-            render={() => (
-              <Profile
-                posts={props.state.profilePage.posts}
-                dispatch={props.dispatch}
-              />
-            )}
+            render={() => <Profile store={props.store} />}
           />
 
           <Route
             path="/dialogs"
-            render={() => (
-              <Dialogs
-                // dialogs={props.state.dialogsPage}
-                // messages={props.state.dialogsPage}
-                state={props.state.dialogsPage}
-                store={props.store}
-              />
-            )}
+            render={() => <DialogsContainer store={props.store} />}
           />
           {/*
           <Route path="/music" component={Music} />

@@ -1,8 +1,10 @@
 import React from 'react'
 import classes from './MyPosts.module.css'
 import Post from './Post/Post'
-import { addPostActiveCreator, updateNewPostTextActionCreator } from '../../../redax/Profail-reducer'
-
+import {
+  addPostActiveCreator,
+  updateNewPostTextActionCreator,
+} from '../../../redax/Profail-reducer'
 
 const MyPosts = (props) => {
   console.log('проверка myposts', props)
@@ -11,14 +13,13 @@ const MyPosts = (props) => {
   ))
   let newPostElement = React.createRef()
 
-  let addPost = () => {
-    props.dispatch({ type: 'ADD-POST' })
+  let onAddPost = () => {
+    props.addPost()
   }
 
   let onPostChange = () => {
     let text = newPostElement.current.value
-
-    props.dispatch({ type: 'UPDATE-NEW-POST-TEXT', newText: text })
+    props.updateNewPostText(text)
   }
 
   return (
@@ -35,7 +36,7 @@ const MyPosts = (props) => {
           />
         </div>
         <div>
-          <button onClick={addPost}>Add post</button>
+          <button onClick={onAddPost}>Add post</button>
         </div>
       </div>
       <div className={classes.posts}>{postsElements}</div>
