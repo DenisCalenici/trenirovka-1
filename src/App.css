@@ -7,7 +7,7 @@
     'h h'
     'n  c';
 
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 147px 1fr;
   grid-template-columns: 2fr 10fr;
   grid-gap: 5px;
 }
@@ -15,5 +15,4 @@
 .app-wrapper-content {
   grid-area: c;
   background-color: #ffda40;
-  
 }

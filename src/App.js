@@ -11,30 +11,23 @@ import Music from './components/Music/Music'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 
 function App(props) {
-  console.log('proverka app', props)
-
   return (
-    <BrowserRouter>
-      <div className="app-wrapper">
-        <Header />
-        <Navbar />
-        <div className="app-wrapper-content">
-          <Route
-            path="/profile"
-            render={() => <Profile store={props.store} />}
-          />
+    <div className="app-wrapper">
+      <Header />
+      <Navbar />
+      <div className="app-wrapper-content">
+        <Route path="/profile" render={() => <Profile store={props.store} />} />
 
-          <Route
-            path="/dialogs"
-            render={() => <DialogsContainer store={props.store} />}
-          />
-          {/*
+        <Route
+          path="/dialogs"
+          render={() => <DialogsContainer store={props.store} />}
+        />
+        {/*
           <Route path="/music" component={Music} />
           <Route path="/news" component={News} />
           <Route path="/settings" component={Settings} />*/}
-        </div>
       </div>
-    </BrowserRouter>
+    </div>
   )
 }
 

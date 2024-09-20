@@ -5,23 +5,25 @@ import { updateNewMessageBodyCreator } from '../../redax/Dialogs-reducer '
 import { sendMessageCreator } from '../../redax/Dialogs-reducer '
 
 const Dialogs = (props) => {
+  
   let state = props.dialogsPage
-  let dialogsElement = props.state.dialogs.map((d) => (
+  let dialogsElement = props.dialogsPage.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} />
   ))
 
-  let messageElement = props.state.message.map((m) => (
+  let messageElement = props.dialogsPage.message.map((m) => (
     <Message message={m.message} id={m.id} />
   ))
 
-  let newMessageBody = props.state.message.newMessageBody
+  let newMessageBody = props.dialogsPage.message.newMessageBody
 
   let onSendMessageClick = () => {
-    props.sendMessageCreator()
+    props.sendMessage()
   }
   let onNewMessageChange = (e) => {
+    console.log('onNewMessageChange', props)
     let body = e.target.value
-    props.updateNewMessageBodyCreator(body)
+    props.updateNewMessageBody(body)
   }
   return (
     <div className={classes.dialogs}>

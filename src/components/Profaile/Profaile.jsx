@@ -5,7 +5,7 @@ import ProfileInfo from './ProfileInfo/ProgailInfo'
 import MyPostsContainer from './MyPosts/MyPostContainer'
 
 const Profile = (props) => {
-  console.log('проверка  Profile', props)
+  
   return (
     <div className={classes.content}>
       <ProfileInfo />

@@ -3,18 +3,20 @@ import store from './redax/redux-store'
 import { BrowserRouter } from 'react-router-dom'
 import ReactDOM from 'react-dom'
 import App from './App'
-let rerenderEntireTree = (state) => {
-  console.log('proverka index', state)
+import { Provider } from 'react-redux'
+
+let rerenderEntireTree = () => {
   ReactDOM.render(
     <BrowserRouter>
-      <App state={state} dispatch={store.dispatch.bind(store)} store={store} />
+      <Provider value={store}>
+        <App />
+      </Provider>
     </BrowserRouter>,
     document.getElementById('root')
   )
 }
-rerenderEntireTree(store.getState())
+rerenderEntireTree()
 
 store.subscribe(() => {
-  let state = store.getState()
-  rerenderEntireTree(state)
+  rerenderEntireTree()
 })

@@ -6,10 +6,12 @@ const ProfileInfo = () => {
       <div>
         <img
           className={classes.img}
-          src="https://avatars.mds.yandex.net/i?id=09ae2533a1cb773ef1660635729e2772f6bfeda0-9657345-images-thumbs&n=13"
+          src="https://avatars.yandex.net/get-music-content/10703962/0c90dd34.a.27136744-1/m1000x1000?webp=false"
         />
       </div>
-      <div className={classes.discriptionBlocke}>ava+discription</div>
+      <div className={classes.discriptionBlocke}>
+        Hi, I'm a cheerful newbie programmer
+      </div>
     </div>
   )
 }
