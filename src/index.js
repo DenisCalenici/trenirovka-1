@@ -8,7 +8,7 @@ import { Provider } from 'react-redux'
 let rerenderEntireTree = () => {
   ReactDOM.render(
     <BrowserRouter>
-      <Provider value={store}>
+      <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>,

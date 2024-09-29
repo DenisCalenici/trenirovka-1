@@ -1,7 +1,6 @@
 import './App.css'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Header from './components/Header/Header'
-import Dialogs from './components/Dialogs/Dialogs'
 import Navbar from './components/Navbar/Navbar'
 import Profile from './components/Profaile/Profaile'
 import store from './index'

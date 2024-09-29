@@ -4,11 +4,8 @@ import sideBarReducer from './SideBar-reducer '
 
 let store = {
   _state: {
-    profilePage: {
-  },
-    dialogsPage: {
-    
-    },
+    profilePage: {},
+    dialogsPage: {},
     sidebar: {},
   },
   _callSubscriber() {
