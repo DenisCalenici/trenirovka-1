@@ -5,7 +5,6 @@ import { updateNewMessageBodyCreator } from '../../redax/Dialogs-reducer '
 import { sendMessageCreator } from '../../redax/Dialogs-reducer '
 
 const Dialogs = (props) => {
-  
   let state = props.dialogsPage
   let dialogsElement = props.dialogsPage.dialogs.map((d) => (
     <DialogItem name={d.name} id={d.id} />
@@ -21,7 +20,7 @@ const Dialogs = (props) => {
     props.sendMessage()
   }
   let onNewMessageChange = (e) => {
-    console.log('onNewMessageChange', props)
+    console.log('hghghh', props)
     let body = e.target.value
     props.updateNewMessageBody(body)
   }

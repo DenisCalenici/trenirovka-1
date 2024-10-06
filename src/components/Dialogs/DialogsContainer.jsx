@@ -7,16 +7,17 @@ import Dialogs from './Dialogs'
 import { connect } from 'react-redux'
 
 let mapStateToProps = (state) => {
+  console.log('proverka',state)
   return {
     dialogsPage: state.dialogsPage,
   }
 }
 let mapDispatchToProps = (dispatch) => {
   return {
-    updateNewMessageBody: () => {
+    sendMessage: () => {
       dispatch(sendMessageCreator())
     },
-    sendMessage: (body) => {
+    supdateNewMessageBody: (body) => {
       dispatch(updateNewMessageBodyCreator(body))
     },
   }

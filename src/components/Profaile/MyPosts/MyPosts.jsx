@@ -1,10 +1,6 @@
 import React from 'react'
 import classes from './MyPosts.module.css'
 import Post from './Post/Post'
-import {
-  addPostActiveCreator,
-  updateNewPostTextActionCreator,
-} from '../../../redax/Profail-reducer'
 
 const MyPosts = (props) => {
   console.log('проверка myposts', props)
@@ -17,21 +13,21 @@ const MyPosts = (props) => {
     props.addPost()
   }
 
-  let onPostChange = () => {
-    let text = newPostElement.current.value
-    props.updateNewPostText(text)
-  }
+  let onPostChange = (event) => {
+    console.log('Евент бл', event.target.value)
 
+    //let text = newPostElement.current.value
+    props.updateNewPostText(event.target.value)
+  }
+  console.log('проверка props.newPostText', props.newPostText)
   return (
-    <>
-      <div className={classes.postsBlocke}>
-        <h3>My posts</h3>
-      </div>
+    <div className={classes.postsBlocke}>
+      <h3>My posts</h3>
       <div>
         <div>
           <textarea
             onChange={onPostChange}
-            ref={newPostElement}
+            // ref={newPostElement}
             value={props.newPostText}
           />
         </div>
@@ -40,7 +36,7 @@ const MyPosts = (props) => {
         </div>
       </div>
       <div className={classes.posts}>{postsElements}</div>
-    </>
+    </div>
   )
 }
 export default MyPosts
