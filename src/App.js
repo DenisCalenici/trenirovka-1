@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar'
 import Profile from './components/Profaile/Profaile'
-import Users from './users/users'
+import UsersContainer from './users/usersContainer'
 import store from './index'
 import News from './components/News/News'
 import Settings from './components/Settings/Settings'
@@ -22,7 +22,7 @@ function App(props) {
           path="/dialogs"
           render={() => <DialogsContainer store={props.store} />}
         />
-        <Route path="/users" render={() => <Users />} />
+        <Route path="/users" render={() => <UsersContainer />} />
         {/*
           <Route path="/music" component={Music} />
           <Route path="/news" component={News} />
