@@ -1,6 +1,11 @@
 import React from 'react'
 import classes from './ProfaileIfo.module.css'
-const ProfileInfo = () => {
+
+import Preloader from '../../Common/preloader'
+const ProfileInfo = (props) => {
+  if (!props.profile) {
+    return <Preloader />
+  }
   return (
     <div>
       <div>
@@ -9,7 +14,8 @@ const ProfileInfo = () => {
           src="https://avatars.yandex.net/get-music-content/10703962/0c90dd34.a.27136744-1/m1000x1000?webp=false"
         />
       </div>
-      <div className={classes.discriptionBlocke}>
+      <div className={classes.ProfaileIfo}>
+        <img src={props.profile.photos.large} />
         Hi, I'm a cheerful newbie programmer
       </div>
     </div>

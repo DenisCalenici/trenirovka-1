@@ -9,6 +9,7 @@ import News from './components/News/News'
 import Settings from './components/Settings/Settings'
 import Music from './components/Music/Music'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
+import ProfileContainer from './components/Profaile/ProfaileContainer'
 
 function App(props) {
   return (
@@ -16,7 +17,10 @@ function App(props) {
       <Header />
       <Navbar />
       <div className="app-wrapper-content">
-        <Route path="/profile" render={() => <Profile store={props.store} />} />
+        <Route
+          path="/profile:userId?"
+          render={() => <ProfileContainer store={props.store} />}
+        />
 
         <Route
           path="/dialogs"
