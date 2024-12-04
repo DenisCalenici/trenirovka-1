@@ -3,6 +3,8 @@ import classes from './ProfaileIfo.module.css'
 
 import Preloader from '../../Common/preloader'
 const ProfileInfo = (props) => {
+  console.log('props', props)
+
   if (!props.profile) {
     return <Preloader />
   }

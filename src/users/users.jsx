@@ -5,7 +5,8 @@ import userPhoto from '../avatarka/img1/1697907720_new_preview_1-m00-0b-c3-rb8bw
 import { NavLink } from 'react-router-dom/cjs/react-router-dom'
 
 let Users = (props) => {
-  let pagesCount = Math.ceil(props.totalUsersCount / this.props.pageSize)
+  let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+
   let pages = []
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i)
@@ -16,7 +17,9 @@ let Users = (props) => {
         {pages.map((p) => {
           return (
             <span
-              className={this.props.currentPage === p && styles.selectedPage}
+              className={
+                props.currentPage === p ? styles.selectedPage : undefined
+              }
               onClick={(e) => {
                 props.onPageChanges(p)
               }}
