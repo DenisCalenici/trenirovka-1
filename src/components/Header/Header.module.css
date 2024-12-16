@@ -2,8 +2,13 @@
   grid-area: h;
   height: 150px;
   position: relative;
+  background: blueviolet;
 }
 .header img {
   width: 1200px;
   height: 150px;
+}
+.loginBlock {
+  float: right;
+  background: yellow;
 }

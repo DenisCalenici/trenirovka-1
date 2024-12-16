@@ -1,12 +1,10 @@
 import React from 'react'
-
 import styles from './users.module.css'
 import userPhoto from '../avatarka/img1/1697907720_new_preview_1-m00-0b-c3-rb8bwl3md6wabxnzaacweicyw9g934.jpg'
 import { NavLink } from 'react-router-dom/cjs/react-router-dom'
 
 let Users = (props) => {
   let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
-
   let pages = []
   for (let i = 1; i <= pagesCount; i++) {
     pages.push(i)
@@ -46,19 +44,21 @@ let Users = (props) => {
             <div>
               {u.followed ? (
                 <button
-                  onClick={() => {
-                    props.follow(u.id)
-                  }}
-                >
-                  Unwollow
-                </button>
-              ) : (
-                <button
+                  disabled={props.followingInProgress.some((id) => id === u.id)}
                   onClick={() => {
                     props.unfollow(u.id)
                   }}
                 >
-                  Follow
+                  Unfollow
+                </button>
+              ) : (
+                <button
+                  disabled={props.followingInProgress.some((id) => id === u.id)}
+                  onClick={() => {
+                    props.follow(u.id)
+                  }}
+                >
+                  follow
                 </button>
               )}
             </div>
