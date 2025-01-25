@@ -7,7 +7,7 @@ import {
   setCurrentPage,
   toggleFollowingInProgress,
   getUsers,
-} from '../redax/users-redax'
+} from '../redax/users-redux'
 import Preloader from '../components/Common/preloader'
 import { withAuthRedirect } from '../HOC/withAuthRedirect'
 import { compose } from 'redux'
@@ -54,11 +54,13 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default compose(withAuthRedirect, connect(mapStateToProps, {
-  follow,
-  unFollow,
-  setCurrentPage,
-  toggleFollowingInProgress,
-  getUsers,
-}))(UserContainer)
-
+export default compose(
+  withAuthRedirect,
+  connect(mapStateToProps, {
+    follow,
+    unFollow,
+    setCurrentPage,
+    toggleFollowingInProgress,
+    getUsers,
+  })
+)(UserContainer)

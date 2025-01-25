@@ -3,10 +3,11 @@ import classes from './MyPosts.module.css'
 import Post from './Post/Post'
 
 const MyPosts = (props) => {
-  console.log('првоерка проспс', props)
+
   let postsElements = props.posts.map((p, index, array) => (
     <Post key={p.id} message={p.message} likeCount={p.likeCount} />
   ))
+
   let newPostElement = React.createRef()
 
   let onAddPost = () => {
