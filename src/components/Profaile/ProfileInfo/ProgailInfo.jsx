@@ -1,9 +1,9 @@
 import React from 'react'
 import classes from './ProfaileIfo.module.css'
-
+import ProfileStatus from './ProfileStatus'
 import Preloader from '../../Common/preloader'
 const ProfileInfo = (props) => {
-  console.log('props', props)
+
 
   if (!props.profile) {
     return <Preloader />
@@ -20,6 +20,7 @@ const ProfileInfo = (props) => {
         <img src={props.profile.photos.large} />
         Hi, I'm a cheerful newbie programmer
       </div>
+      <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
     </div>
   )
 }

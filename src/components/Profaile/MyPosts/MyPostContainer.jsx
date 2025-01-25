@@ -3,7 +3,7 @@ import MyPosts from './MyPosts'
 import {
   addPostActiveCreator,
   updateNewPostTextActionCreator,
-} from '../../../redax/Profail-reducer'
+} from '../../../redax/Profile-reducer'
 import { connect } from 'react-redux'
 
 const mapStateToProps = (state) => {

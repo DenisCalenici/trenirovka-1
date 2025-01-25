@@ -3,7 +3,7 @@ import classes from './MyPosts.module.css'
 import Post from './Post/Post'
 
 const MyPosts = (props) => {
-  console.log('проверка myposts', props)
+  console.log('првоерка проспс', props)
   let postsElements = props.posts.map((p, index, array) => (
     <Post key={p.id} message={p.message} likeCount={p.likeCount} />
   ))
@@ -14,22 +14,15 @@ const MyPosts = (props) => {
   }
 
   let onPostChange = (event) => {
-    console.log('Евент бл', event.target.value)
-
-    //let text = newPostElement.current.value
     props.updateNewPostText(event.target.value)
   }
-  console.log('проверка props.newPostText', props.newPostText)
+
   return (
     <div className={classes.postsBlocke}>
       <h3>My posts</h3>
       <div>
         <div>
-          <textarea
-            onChange={onPostChange}
-            // ref={newPostElement}
-            value={props.newPostText}
-          />
+          <textarea onChange={onPostChange} value={props.newPostText} />
         </div>
         <div>
           <button onClick={onAddPost}>Add post</button>

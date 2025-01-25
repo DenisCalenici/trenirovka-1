@@ -1,6 +1,7 @@
 import classes from './Dialogs.module.css'
 import Message from './Message/Message'
 import DialogItem from './DialogItem/DialogItem'
+
 import { updateNewMessageBodyCreator } from '../../redax/Dialogs-reducer '
 import { sendMessageCreator } from '../../redax/Dialogs-reducer '
 
@@ -20,10 +21,11 @@ const Dialogs = (props) => {
     props.sendMessage()
   }
   let onNewMessageChange = (e) => {
-    console.log('hghghh', props)
     let body = e.target.value
     props.updateNewMessageBody(body)
   }
+
+
   return (
     <div className={classes.dialogs}>
       <div className={classes.dialogsItem}>{dialogsElement}</div>
