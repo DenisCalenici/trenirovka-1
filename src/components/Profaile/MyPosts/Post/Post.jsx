@@ -1,5 +1,6 @@
 import classes from './Post.module.css'
 const Post = (props) => {
+  console.log('props-Posts', props)
   return (
     <div className={classes.item}>
       <img src="https://avatars.mds.yandex.net/i?id=4ee66f4c9bb78e32e1bab93a08e09a11dac47d99-10700817-images-thumbs&n=13" />

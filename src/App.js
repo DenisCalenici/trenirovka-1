@@ -10,27 +10,49 @@ import Music from './components/Music/Music'
 import DialogsContainer from './components/Dialogs/DialogsContainer'
 import ProfileContainer from './components/Profaile/ProfaileContainer'
 import LoginPage from './login/login'
+import { Component } from 'react'
+import { withRouter } from 'react-router-dom/cjs/react-router-dom.min'
+import { connect } from 'react-redux'
+import { compose } from 'redux'
+import { initializeApp, initialized } from './redax///app-reducer '
+import Preloader from './components/Common/preloader'
+class App extends Component {
+  componentDidMount() {
+    this.props.initializeApp()
+  }
 
-function App(props) {
-  return (
-    <div className="app-wrapper">
-      <HeaderContainer />
-      <Navbar />
-      <div className="app-wrapper-content">
-        <Route
-          path="/profile:userId?"
-          render={() => <ProfileContainer store={props.store} />}
-        />
+  render() {
+    if (!this.props.initialized) {
+      return <Preloader />
+    }
 
-        <Route
-          path="/dialogs"
-          render={() => <DialogsContainer store={props.store} />}
-        />
-        <Route path="/users" render={() => <UsersContainer />} />
-        <Route path="/login" render={() => <LoginPage />} />
+    return (
+      <div className="app-wrapper">
+        <HeaderContainer />
+        <Navbar />
+        <div className="app-wrapper-content">
+          <Route
+            path="/profile:userId?"
+            render={() => <ProfileContainer store={props.store} />}
+          />
+
+          <Route
+            path="/dialogs"
+            render={() => <DialogsContainer store={props.store} />}
+          />
+          <Route path="/users" render={() => <UsersContainer />} />
+          <Route path="/login" render={() => <LoginPage />} />
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 
-export default App
+const mapStateToProps = (state) => {
+  initialized: state.app.initialized
+}
+
+export default compose(
+  withRouter,
+  connect(mapStateToProps, { initializeApp })
+)(App)
