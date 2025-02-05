@@ -14,14 +14,14 @@ import { Component } from 'react'
 import { withRouter } from 'react-router-dom/cjs/react-router-dom.min'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import { initializeApp, initialized } from './redax///app-reducer '
+import { initializeApp, initialized } from './redux/app-reducer '
 import Preloader from './components/Common/preloader'
 class App extends Component {
   componentDidMount() {
     this.props.initializeApp()
   }
 
-  render() {
+  render(props) {
     if (!this.props.initialized) {
       return <Preloader />
     }
@@ -33,12 +33,12 @@ class App extends Component {
         <div className="app-wrapper-content">
           <Route
             path="/profile:userId?"
-            render={() => <ProfileContainer store={props.store} />}
+            render={() => <ProfileContainer store={this.props.store} />}
           />
 
           <Route
             path="/dialogs"
-            render={() => <DialogsContainer store={props.store} />}
+            render={() => <DialogsContainer store={this.props.store} />}
           />
           <Route path="/users" render={() => <UsersContainer />} />
           <Route path="/login" render={() => <LoginPage />} />
@@ -48,9 +48,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  initialized: state.app.initialized
-}
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized,
+})
 
 export default compose(
   withRouter,

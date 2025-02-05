@@ -29,7 +29,6 @@ const profileReducer = (state = initialState, action) => {
       return {
         ...state,
         posts: [...state.posts, newPost],
-        
       }
     }
 
@@ -66,6 +65,10 @@ export const updateStatus = (status) => (dispatch) => {
 }
 
 export const getUserProfile = (userId) => (dispatch) => {
+  if (!userId) {
+    return
+  }
+
   usersAPI.getProfile(userId).then((response) => {
     dispatch(setUserProfile(response.data))
   })

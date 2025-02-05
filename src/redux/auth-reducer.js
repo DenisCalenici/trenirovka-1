@@ -59,7 +59,10 @@ export const login = (email, password, rememberMe) => (dispatch) => {
           })
         )
       }
-    })
+    }).catch((error)=>{
+console.log('error', error)
+    }
+  )
 }
 
 export const logout = () => (dispatch) => {

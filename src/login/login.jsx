@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form'
 import { Input } from '..//components/Common/FormsControls/FormsControls'
 import { required } from '../utils/falidators/indexFalidators'
 import { connect } from 'react-redux'
-import { login } from '../redax/auth-reducer'
+import { login } from '../redux/auth-reducer'
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min'
 import style from '../components/Common/FormsControls/FormControls.module.css'
 
