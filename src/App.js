@@ -14,8 +14,8 @@ import { Component } from 'react'
 import { withRouter } from 'react-router-dom/cjs/react-router-dom.min'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import { initializeApp, initialized } from './redux/app-reducer '
-import Preloader from './components/Common/preloader'
+import { initializeApp } from './redux/app-reducer '
+import Preloader from './users/preloader'
 class App extends Component {
   componentDidMount() {
     this.props.initializeApp()

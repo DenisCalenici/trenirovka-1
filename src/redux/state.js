@@ -9,7 +9,7 @@ let store = {
     sidebar: {},
   },
   _callSubscriber() {
-    console.log('state is changed')
+   
   },
   getState() {
     return this._state
