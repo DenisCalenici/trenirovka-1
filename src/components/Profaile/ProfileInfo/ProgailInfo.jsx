@@ -15,7 +15,7 @@ const ProfileInfo = (props) => {
         />
       </div>
       <div className={classes.ProfaileIfo}>
-        <img src={props.profile.photos.large} />
+        {/* <img src={props.profile.photos.large} /> */}
         Hi, I'm a cheerful newbie programmer
       </div>
       <ProfileStatusUseHooks

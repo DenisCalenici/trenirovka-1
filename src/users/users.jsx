@@ -1,14 +1,14 @@
 import React from 'react'
 import Paginator from '../components/Common/Paginator/Paginator'
 import User from './user'
-let Users = (
+let Users = ({
   totalUsersCount,
   pageSize,
   currentPage,
   onPageChanged,
   users,
   ...props
-) => {
+}) => {
   return (
     <div>
       <Paginator

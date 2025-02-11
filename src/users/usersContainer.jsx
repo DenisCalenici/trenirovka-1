@@ -68,6 +68,6 @@ export default compose(
     unFollow,
     setCurrentPage,
     toggleFollowingInProgress,
-    getUser: requestUsers,
+    getUsers: requestUsers,
   })
 )(UserContainer)

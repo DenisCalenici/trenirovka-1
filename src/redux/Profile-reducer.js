@@ -69,8 +69,7 @@ export const getUserProfile = (userId) => async (dispatch) => {
     return
   }
 
-  let response = await usersAPI
-    .getProfile(userId)
-    .dispatch(setUserProfile(response.data))
+  let response = await usersAPI.getProfile(userId)
+  dispatch(setUserProfile(response.data))
 }
 export default profileReducer
