@@ -13,18 +13,13 @@ import {
 const LoginForm = ({ handleSubmit, error }) => {
   return (
     <form onSubmit={handleSubmit}>
-      {createField('Email', 'email', [required], Input)}
-      {createField('Password', 'password', [required], Input, {
+      {createField('Email', [required], 'email', Input)}
+      {createField('Password', [required], 'password', Input, {
         type: 'password',
       })}
-      {createField(
-        'rememberMe',
-        [],
-        Input,
-        { type: 'checkbox' },
-        ' remember me'
-      )}
-
+      {createField('rememberMe', [], 'rememberMe', Input, {
+        type: 'checkbox',
+      })}
       {error && <div className={style.formSummaryError}>error</div>}
       <div>
         <button>Login</button>
