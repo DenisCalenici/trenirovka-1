@@ -6,6 +6,7 @@ const ProfileInfo = (props) => {
   if (!props.profile) {
     return <Preloader />
   }
+
   return (
     <div>
       <div>
@@ -15,9 +16,9 @@ const ProfileInfo = (props) => {
         />
       </div>
       <div className={classes.ProfaileIfo}>
-        {/* <img src={props.profile.photos.large} /> */}
         Hi, I'm a cheerful newbie programmer
       </div>
+
       <ProfileStatusUseHooks
         status={props.status}
         updateStatus={props.updateStatus}

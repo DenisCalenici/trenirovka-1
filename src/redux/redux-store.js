@@ -16,7 +16,6 @@ let reducers = combineReducers({
   form: formReducer,
   app: appReducer,
 })
-// let store = createStore(reducers, applyMiddleware(thunkMiddleware))
 
 const composeEnhancers = window._REDUX_DEVTOOLS_EXTENSION_COMPOSE_ || compose
 const store = createStore(

@@ -4,8 +4,8 @@ import React, { useState } from 'react'
 let Paginator = ({
   totalItemsCount,
   pageSize,
-  onPageChanges,
   currentPage,
+  onPageChanges,
   portionSize = 10,
 }) => {
   let pagesCount = Math.ceil(totalItemsCount / pageSize)
@@ -18,6 +18,13 @@ let Paginator = ({
   let [portionNumber, setPortionNumber] = useState(1)
   let leftPortionPageNumber = (portionNumber - 1) * portionSize + 1
   let rightPortionPageNumber = portionNumber * portionSize
+  console.log('проВерка ', {
+    totalItemsCount,
+    pageSize,
+    currentPage,
+    onPageChanges,
+    portionSize,
+  })
   return (
     <div className={styles.Paginator}>
       {portionNumber > 1 && (
@@ -36,10 +43,10 @@ let Paginator = ({
         .map((p) => {
           return (
             <span
-              className={styles(
-                { [styles.selectedPage]: currentPage === p },
-                styles.pageNumber
-              )}
+              className={cn
+                ({ [styles.selectedPage]: currentPage === p },
+                styles.pageNumber)
+              }
               key={p}
               onClick={(e) => {
                 onPageChanges(p)

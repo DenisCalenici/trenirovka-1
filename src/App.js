@@ -10,8 +10,8 @@ import { withSuspense } from './HOC/withSuspence'
 import Preloader from './users/preloader'
 import HeaderContainer from './components/Header/HeaderContainer'
 import Navbar from './components/Navbar/Navbar'
+import LoginPage from './login/login'
 
-const LoginPage = React.lazy(() => import('./login/login'))
 const UsersContainer = React.lazy(() => import('./users/usersContainer'))
 const DialogsContainer = React.lazy(() =>
   import('./components/Dialogs/DialogsContainer')
@@ -42,7 +42,7 @@ class App extends Component {
             render={withSuspense(ProfileContainer)}
           />
           <Route path="/users" render={withSuspense(UsersContainer)} />
-          <Route path="/login" render={withSuspense()} />
+          <Route path="/login" render={() => <LoginPage />} />
         </div>
       </div>
     )

@@ -36,22 +36,20 @@ export const getAuthUserData = () => async (dispatch) => {
 }
 export const login = (email, password, rememberMe) => async (dispatch) => {
   let response = await authAPI.login(email, password, rememberMe)
-  console.log('login-proverca', response)
+
   if (response.data.resultCode === 0) {
     dispatch(getAuthUserData())
   } else {
     let message =
-      response.data.messages.length > 0 ? response.data.messages[0] : 'Some error'
+      response.data.messages.length > 0
+        ? response.data.messages[0]
+        : 'Some error'
     dispatch(
       stopSubmit('login', {
         _error: message,
       })
     )
   }
-
-  // .catch((error) => {
-  //   console.log('error', error)
-  // })
 }
 
 export const logout = () => async (dispatch) => {

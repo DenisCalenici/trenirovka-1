@@ -3,19 +3,19 @@ import React from 'react'
 class ProfileStatus extends React.Component {
   state = {
     editMode: false,
-    status: this.props.status,
+    status:this.props.status,
   }
   activateEditMode = () => {
     this.setState({
       editMode: true,
     })
-    this.state.editMode = true
+    // this.state.editMode = true
   }
-  deactivateEditMode = () => {
+  deactivateEditMode() {
     this.setState({
       editMode: false,
     })
-    this.props.updateStatus(this.state.status)
+    // this.props.updateStatus(this.state.status)
   }
   onStatusChange = (e) => {
     this.setState({
@@ -25,7 +25,7 @@ class ProfileStatus extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.status !== this.props.status) {
       this.setState({
-        status: this.props.status,
+        status: this.props.status
       })
     }
     let a = this.state
@@ -37,7 +37,7 @@ class ProfileStatus extends React.Component {
       <div>
         {!this.state.editMode && (
           <div>
-            <span onDoubleClick={this.activateEditMode.bind(this)}>
+            <span onDoubleClick={this.activateEditMode}>
               {this.props.status || '|-----|'}
             </span>
           </div>
@@ -56,4 +56,5 @@ class ProfileStatus extends React.Component {
     )
   }
 }
+
 export default ProfileStatus

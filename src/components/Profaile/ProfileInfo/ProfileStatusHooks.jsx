@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 //import classes from './ ProfileStatus .module.css'
 const ProfileStatusUseHooks = (props) => {
   let [editMode, setEditMode] = useState(false)
@@ -20,13 +19,14 @@ const ProfileStatusUseHooks = (props) => {
   const onStatusChange = (e) => {
     setStatus(e.currentTarget.value)
   }
+  console.log('proverka', props)
 
   return (
     <div>
       {!editMode && (
         <div>
           <span onDoubleClick={activateEditMode}>
-            {props.status || '---------- '}
+            {props.status || '----------'}
           </span>
         </div>
       )}
