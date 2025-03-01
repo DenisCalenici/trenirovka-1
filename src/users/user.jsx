@@ -4,7 +4,8 @@ import userPhoto from '../avatarka/img1/1697907720_new_preview_1-m00-0b-c3-rb8bw
 import { NavLink } from 'react-router-dom/cjs/react-router-dom'
 
 let User = ({ user, followingInProgress, unFollow, follow, ...props }) => {
-  let u = User
+  let u = user
+   
   return (
     <div>
       <span>
@@ -45,8 +46,8 @@ let User = ({ user, followingInProgress, unFollow, follow, ...props }) => {
           <div>{u.status}</div>
         </span>
         <span>
-          <div>{'u.location.country'}</div>
-          <div>{'u.location.city'}</div>
+          <div>{u.location?.country}</div>
+          <div>{u.location?.city}</div>
         </span>
       </span>
     </div>
