@@ -9,19 +9,13 @@ const Profile = ({
   savePhoto,
   isOwner,
   status,
+  saveProfile,
   ...rest
 }) => {
-  console.log(
-    'проверка в profile',
-    profile,
-    updateStatus,
-    status,
-    savePhoto,
-    rest
-  )
   return (
     <div className={classes.content}>
       <ProfileInfo
+        saveProfile={saveProfile}
         isOwner={isOwner}
         profile={profile}
         updateStatus={updateStatus}
